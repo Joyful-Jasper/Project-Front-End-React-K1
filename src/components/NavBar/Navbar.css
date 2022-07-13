@@ -15,6 +15,12 @@
 
 .btn-second {
   background-color: white;
+  color: black;
+  border-width: 2px;
+}
+
+.btn-second:hover {
+  border-color: #FFA000;
   color: #FFA000;
 }
 

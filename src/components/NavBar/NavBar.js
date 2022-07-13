@@ -26,7 +26,7 @@ const NavBar = () => {
             <Form.Control
               type="search"
               placeholder="Search"
-              className=""
+              className="shadow-sm border rounded-3"
               aria-label="Search"
             />
           </Form>
