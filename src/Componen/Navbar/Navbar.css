@@ -1,0 +1,29 @@
+.navbar-first {
+  background-color: #F7F1EA;
+}
+
+.btn-first {
+  border-color: #FFA000;
+  border-width: 2px;
+  color: #FFA000;
+}
+
+.btn-first:hover {
+  background-color: #FFA000;
+  color: white;
+}
+
+.btn-second {
+  background-color: white;
+  color: black;
+  border-width: 2px;
+}
+
+.btn-second:hover {
+  border-color: #FFA000;
+  color: #FFA000;
+}
+
+.input-size {
+  width: 25%;
+}
