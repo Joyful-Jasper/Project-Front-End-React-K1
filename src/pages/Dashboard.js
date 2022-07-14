@@ -7,9 +7,6 @@ import CardMenutab from "../components/Card/CardMenutab";
 const Dashboard = () => {
   return (
     <>
-      {/* NavBar */}
-      <NavBar />
-
       {/* carousel */}
       <div className="container-banner">
         <Carousel />

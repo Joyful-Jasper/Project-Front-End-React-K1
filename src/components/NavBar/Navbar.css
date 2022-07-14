@@ -28,3 +28,11 @@
 .input-size {
   width: 25%;
 }
+
+.avatar {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  border-radius: 25px;
+}
