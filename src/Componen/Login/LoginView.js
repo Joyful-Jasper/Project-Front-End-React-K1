@@ -1,5 +1,6 @@
 // import { Button } from "bootstrap";
 import React, { useState } from "react";
+import logo from "../../assets/logo.svg";
 
 const LoginView = () => {
   const [loginData, setLoginData] = useState({
@@ -19,11 +20,13 @@ const LoginView = () => {
   };
   return (
     <div className="container">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-6">
-            <h1>Login</h1>
-            <p>Hey, enter your details to sign in to your account</p>
+      <div className="container-fluid" style={{ backgroundColor: "#F7F1EA" }}>
+        <img src={logo} width={150} className="mt-3 mx-5" />
+        <div className="row justify-content-center d-flex mx-auto">
+          <div className="col-6 mt-5 my-5 py-3 px-5" style={{ backgroundColor: "white" }}>
+            <h1 className="justify-content-center d-flex mx-auto">Login</h1>
+            <p className="justify-content-center d-flex mx-auto">Hey, enter your details to sign in to your account</p>
+
             <label for="exampleFormControlInput1" class="form-label">
               Email
             </label>
@@ -32,13 +35,13 @@ const LoginView = () => {
               Password
             </label>
             <input type="password" class="form-control" id="password" name="password" value={loginData.password} onChange={handleInput} />
+            <br></br>
             <button onClick={handleLogIn}>Sing In</button>
             <br></br>
-            <p>-Or Sign In With-</p>
-            <div className="raw">
-              <div className="col">
-                <img src="https://cdn.dribbble.com/users/2037940/screenshots/6228108/google-logo.png" width={50} height={30} onClick={console.log("tes")} />
-              </div>
+            <p className="pt-3">-Or Sign In With-</p>
+
+            <div className="col-6">
+              <img src="" />
             </div>
           </div>
         </div>

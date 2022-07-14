@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addRegister } from "./RegisterSlice";
 import gambar1 from "../../assets/buku.svg";
+import logo from "../../assets/logo.svg";
 
 const RegisterView = () => {
   const dispatch = useDispatch();
@@ -25,13 +26,18 @@ const RegisterView = () => {
   };
 
   return (
-    <div className="container mt-5 py-5">
+    <div className="container">
       {/* <div className="container-fluid justify-content-center d-flex mx-auto"> */}
-      <div className="row" style={{ backgroundColor: "#F7F1EA  " }}>
-        <div className="col-6 ">
-          <img src={gambar1} width={480} />
-        </div>
-        <div className="col-6 mt-5 py-5">
+      <div className="row" style={{ backgroundColor: "#F7F1EA" }}>
+        <div className="col-6 mt-3">
+          <img src={logo} width={150} />
+          <br></br>
+          <p style={{ sizeText: "30px" }} className="my-3">
+            Create a new account
+          </p>
+
+          <p>Already a member?</p>
+          {/* <link>Login</link> */}
           <div className="row">
             <div className="col">
               <label for="exampleFormControlInput1" class="form-label">
@@ -57,8 +63,10 @@ const RegisterView = () => {
           <br></br>
           <button onClick={handleSumbit}>Create Account</button>
         </div>
+        <div className="col-6 justify-content-end d-flex mx-auto">
+          <img src={gambar1} height={550} />
+        </div>
       </div>
-      {/* </div> */}
     </div>
   );
 };

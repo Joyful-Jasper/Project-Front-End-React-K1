@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import registerReducer from "../Componen/Register/Login/RegisterSlice";
+import registerReducer from "../Componen/Register/RegisterSlice";
 
 const store = configureStore({
   reducer: {
