@@ -5,7 +5,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import { addUser } from '../components/User/UserSlice'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const Login = (props) => {
   const [loginData, setLoginData] = useState({});
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user)
@@ -37,7 +37,7 @@ const Login = () => {
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
-      client_id: '310452483381-n9oth8sl47l69uk67emms037tplp4l2q.apps.googleusercontent.com',
+      client_id: '310452483381-gb8cjmh5ti97985esf00r99bocp1kmke.apps.googleusercontent.com',
       callback: handleCallbackResponse
     })
 
