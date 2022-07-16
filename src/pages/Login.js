@@ -1,15 +1,15 @@
 // import { Button } from "bootstrap";
 import React, { useState, useEffect } from "react";
-import jwt_decode from 'jwt-decode'
-import {useSelector, useDispatch} from 'react-redux'
-import { addUser } from '../components/User/UserSlice'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import jwt_decode from "jwt-decode";
+import { useSelector, useDispatch } from "react-redux";
+import { addUser } from "../components/User/UserSlice";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const [loginData, setLoginData] = useState({});
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user)
-  const navigate = useNavigate()
+  const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
 
   const handleInput = (event) => {
     setLoginData({
@@ -25,28 +25,23 @@ const Login = (props) => {
     // console.log('Encode JWT ID token: ' + response.credential)
     const userObject = jwt_decode(response.credential);
     // console.log(userObject)
-    setLoginData(userObject)
-    dispatch(addUser(userObject))
-    console.log(user.data)
-    navigate('/')
-  }
-  
-  console.log(user)
+    setLoginData(userObject);
+    dispatch(addUser(userObject));
+    console.log(user.data);
+    navigate("/dashboard");
+  };
 
+  console.log(user);
 
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
-      client_id: '310452483381-gb8cjmh5ti97985esf00r99bocp1kmke.apps.googleusercontent.com',
-      callback: handleCallbackResponse
-    })
+      client_id: "310452483381-gb8cjmh5ti97985esf00r99bocp1kmke.apps.googleusercontent.com",
+      callback: handleCallbackResponse,
+    });
 
-    google.accounts.id.renderButton(
-      document.getElementById("buttonDiv"),
-        { theme: "outline", size: "large" }
-    )
-  }, [])
-
+    google.accounts.id.renderButton(document.getElementById("buttonDiv"), { theme: "outline", size: "large" });
+  }, []);
 
   return (
     <div classNameName="container">
@@ -63,14 +58,14 @@ const Login = (props) => {
               Password
             </label>
             <input type="password" className="form-control" id="password" name="password" value={loginData.password} onChange={handleInput} />
-            <button onClick={handleLogIn}>Sing In</button>
+            <button onClick={handleLogIn}>Sign In</button>
             <br></br>
             <p>-Or Sign In With-</p>
             <div classNameName="raw">
               <div classNameName="col">
-                <div id="buttonDiv"></div> 
+                <div id="buttonDiv"></div>
               </div>
-              <Link to='/'>Home</Link>
+              <Link to="/">Home</Link>
             </div>
           </div>
         </div>

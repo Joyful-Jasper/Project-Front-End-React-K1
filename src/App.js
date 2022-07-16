@@ -10,14 +10,16 @@ import ProtectedRoutes from "./ProtectedRoutes";
 function App() {
   return (
     <>
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/sign-up" element={<Signup />} />
         <Route path="/log-in" element={<Login />} />
         <Route path="*" element={<Error />} />
-        <Route element={<ProtectedRoutes />} >  // the child element can be access if the user login
-          <Route path='/dashboard' element={<Dashboard/>} />
+        <Route element={<ProtectedRoutes />}>
+          {" "}
+          // the child element can be access if the user login
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </>

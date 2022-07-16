@@ -1,7 +1,6 @@
 import React from "react";
 import "./CardMenutab.css";
 import Card from "./Card";
-import image1 from "../../assets/the-martian.jpg";
 import DetailBooks from "../DetailBooks-Modal/DetailBooks";
 
 const CardMenutab = (props) => {
@@ -9,17 +8,17 @@ const CardMenutab = (props) => {
     <>
       {/* Card */}
       <div className="container">
-        <h4 className="title">Science Fiction</h4>
+        <h4 className="title">Romance</h4>
         <div className="row">
           {props?.data?.map((item) => (
-            <div className="col-md-2">
-            <Card className="image-card" imgsrc={item?.volumeInfo?.imageLinks?.thumbnail} title={item?.volumeInfo?.title} />
-            <div className="middle">
-              <div className="text">
-                <DetailBooks />
+            <div className="col-md-3 my-2">
+              <Card className="image-card" imgsrc={item?.volumeInfo?.imageLinks?.thumbnail} title={item?.volumeInfo?.title} />
+              <div className="middle">
+                <div className="text">
+                  <DetailBooks />
+                </div>
               </div>
             </div>
-          </div>
           ))}
         </div>
       </div>
