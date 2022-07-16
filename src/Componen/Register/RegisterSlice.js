@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import React from "react";
 
 const initialState = {
-  userData: [{ firstName: "", lastName: "", email: "", password: "" }],
+  data: [],
 };
 
 const RegisterSlice = createSlice({
@@ -10,7 +10,6 @@ const RegisterSlice = createSlice({
   initialState,
   reducers: {
     addRegister: (state, action) => {
-      console.log(action.payload, "tanda");
       state.data.push(action.payload);
     },
   },
