@@ -1,8 +1,13 @@
 // import { Button } from "bootstrap";
 import React, { useState } from "react";
 import logo from "../../assets/logo.svg";
+import { addRegister } from "../Register/RegisterSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { userData } from "../Register/RegisterView";
 
 const LoginView = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -15,8 +20,16 @@ const LoginView = () => {
     });
   };
   const handleLogIn = (event) => {
-    event.preventDefault();
-    console.log(loginData);
+    const result = user.data.find((person) => person.email === loginData.email);
+    if (!result) {
+      console.log("kamu belum register");
+    } else {
+      console.log("selamat");
+    }
+    // dispatch(addRegister(loginData));
+    // event.preventDefault();
+    // console.log(loginData);
+    // loginData.filter((person) => person.email === email.userData, person.password === password.userData).map((filteredPerson) => console.log("berhasil"));
   };
   return (
     <div className="container">
