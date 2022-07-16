@@ -4,9 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { addRegister } from "./RegisterSlice";
 import gambar1 from "../../assets/buku.svg";
 import logo from "../../assets/logo.svg";
+import { jwt_decode } from "jwt-decode";
+
+// import { useEffect } from "react";
 
 const RegisterView = () => {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
   const [userData, setUserData] = useState({
     firstName: "",
     lastName: "",
@@ -18,13 +22,15 @@ const RegisterView = () => {
     setUserData({ ...userData, [event.target.name]: event.target.value });
   };
 
-  const handleSumbit = (event) => {
+  const handleSumbit = (response) => {
     console.log("test");
-    const data = JSON.stringify(userData);
-    localStorage.setItem("user", data);
+    // const userObject = jwt_decode(response);
+    // const userObject = response;
+    // setUserData(userObject);
     dispatch(addRegister(userData));
   };
 
+  console.log(user);
   return (
     <div className="container">
       {/* <div className="container-fluid justify-content-center d-flex mx-auto"> */}

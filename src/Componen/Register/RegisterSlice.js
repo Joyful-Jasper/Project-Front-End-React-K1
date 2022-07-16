@@ -10,7 +10,7 @@ const RegisterSlice = createSlice({
   initialState,
   reducers: {
     addRegister: (state, action) => {
-      console.log(action.payload);
+      console.log(action.payload, "tanda");
       state.data.push(action.payload);
     },
   },
