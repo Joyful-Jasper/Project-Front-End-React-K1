@@ -4,12 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { addRegister } from "./RegisterSlice";
 import gambar1 from "../../assets/buku.svg";
 import logo from "../../assets/logo.svg";
+import { Navigate, useNavigate } from "react-router-dom";
 
 // import { useEffect } from "react";
 
 const RegisterView = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   const [userData, setUserData] = useState({
     firstName: "",
     lastName: "",
@@ -23,6 +25,8 @@ const RegisterView = () => {
 
   const handleSumbit = () => {
     dispatch(addRegister(userData));
+    console.log(user.data);
+    navigate("/login");
   };
 
   return (

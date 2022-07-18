@@ -1,12 +1,16 @@
 // import { Button } from "bootstrap";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.svg";
 import { addRegister } from "../Register/RegisterSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { userData } from "../Register/RegisterView";
+import { Link, navigate, useNavigate } from "react-router-dom";
+import { Form } from "react-bootstrap";
+import jwt_decode from "jwt-decode";
 
 const LoginView = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const [loginData, setLoginData] = useState({
     email: "",
@@ -20,17 +24,39 @@ const LoginView = () => {
     });
   };
   const handleLogIn = (event) => {
-    const result = user.data.find((person) => person.email === loginData.email);
+    const result = user.data.find((person) => person.email === loginData.email );
     if (!result) {
-      console.log("kamu belum register");
+      alert("kamu belum register");
     } else {
-      console.log("selamat");
+      alert("selamat login berhasil");
     }
     // dispatch(addRegister(loginData));
     // event.preventDefault();
     // console.log(loginData);
     // loginData.filter((person) => person.email === email.userData, person.password === password.userData).map((filteredPerson) => console.log("berhasil"));
   };
+  // const handleCallbackResponse = (response) => {
+  //   console.log("Encode JWT ID token: " + response.credential);
+  //   const userObject = jwt_decode(response.credential);
+  //   console.log(userObject);
+  //   setLoginData(userObject);
+  //   dispatch(addRegister(userObject));
+  //   console.log(user.data);
+  //   navigate("/");
+  // };
+
+  // console.log(user);
+
+  // useEffect(() => {
+  //   /* global google */
+  //   google.accounts.id.initialize({
+  //     client_id: "310452483381-gb8cjmh5ti97985esf00r99bocp1kmke.apps.googleusercontent.com",
+  //     callback: handleCallbackResponse,
+  //   });
+
+  //   google.accounts.id.renderButton(document.getElementById("buttonDiv"), { theme: "outline", size: "large" });
+  // }, []);
+
   return (
     <div className="container">
       <div className="container-fluid" style={{ backgroundColor: "#F7F1EA" }}>
@@ -54,7 +80,7 @@ const LoginView = () => {
             <p className="pt-3">-Or Sign In With-</p>
 
             <div className="col-6">
-              <img src="" />
+              <div id="buttonDiv"></div>
             </div>
           </div>
         </div>
