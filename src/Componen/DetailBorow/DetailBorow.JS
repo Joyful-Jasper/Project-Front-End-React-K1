@@ -1,6 +1,6 @@
 import React from "react";
 
-const DetailBook = (props) => {
+const DetailBorow = (props) => {
   return (
     <div>
       <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -32,4 +32,4 @@ const DetailBook = (props) => {
   );
 };
 
-export default DetailBook;
+export default DetailBorow;
