@@ -44,28 +44,30 @@ const RegisterView = () => {
           {/* <link>Login</link> */}
           <div className="row">
             <div className="col">
-              <label for="exampleFormControlInput1" class="form-label">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 first name
               </label>
-              <input type="text" class="form-control" id="first" name="firstName" value={userData.firstName} onChange={handleChange} />
+              <input type="text" className="form-control" id="first" name="firstName" value={userData.firstName} onChange={handleChange} />
             </div>
             <div className="col">
-              <label for="exampleFormControlInput1" class="form-label">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
                 last name
               </label>
-              <input type="text" class="form-control" id="last" name="lastName" value={userData.lastName} onChange={handleChange} />
+              <input type="text" className="form-control" id="last" name="lastName" value={userData.lastName} onChange={handleChange} />
             </div>
           </div>
-          <label for="exampleFormControlInput1" class="form-label pt-3">
+          <label htmlFor="exampleFormControlInput1" className="form-label pt-3">
             Email
           </label>
-          <input type="email" class="form-control" id="emailView" name="email" placeholder="name@example.com" value={userData.email} onChange={handleChange} />
-          <label for="exampleFormControlInput1" class="form-label pt-3">
+          <input type="email" className="form-control" id="emailView" name="email" placeholder="name@example.com" value={userData.email} onChange={handleChange} />
+          <label htmlFor="exampleFormControlInput1" className="form-label pt-3">
             Password
           </label>
-          <input type="password" class="form-control" id="password" name="password" value={userData.password} onChange={handleChange} />
+          <input type="password" className="form-control" id="password" name="password" value={userData.password} onChange={handleChange} />
           <br></br>
-          <button onClick={handleSumbit}>Create Account</button>
+          <button onClick={handleSumbit} style={{ backgroundColor: "#FFA000" }}>
+            Create Account
+          </button>
         </div>
         <div className="col-6 justify-content-end d-flex mx-auto">
           <img src={gambar1} height={550} />
