@@ -9,34 +9,34 @@ const CardGenre = () => {
       <div className="row row-cols-lg-5 ">
         <div className="col">
           <div className="p-2 border" id="card-genre">
-            <img src={genre1} width={60} />
+            {/* <img src={genre1} width={60} /> */}
             <p className="genre-title">Romance</p>
             <a href="#" className="genre-button">
-              <img src={butttonNext} width={20} height={20} />
+              {/* <img src={butttonNext} width={20} height={20} /> */}
             </a>
           </div>
         </div>
         <div className="col">
           <div className="p-2 border" id="card-genre">
-            <img src={genre1} width={60} />
+            {/* <img src={genre1} width={60} /> */}
             <p className="genre-title">Romance</p>
             <a href="#" className="genre-button">
-              <img src={butttonNext} width={20} height={20} />
+              {/* <img src={butttonNext} width={20} height={20} /> */}
             </a>
           </div>
         </div>
         <div className="col">
           <div className="p-2 border" id="card-genre">
-            <img src={genre1} width={60} />
+            {/* <img src={genre1} width={60} /> */}
             <p className="genre-title">Romance</p>
             <a href="#" className="genre-button">
-              <img src={butttonNext} width={20} height={20} />
+              {/* <img src={butttonNext} width={20} height={20} /> */}
             </a>
           </div>
         </div>
         <div className="col">
           <div className="p-2 border" id="card-genre">
-            <img src={genre1} width={60} />
+            {/* <img src={genre1} width={60} /> */}
             <p className="genre-title">Romance</p>
             <a href="#" className="genre-button">
               <img src={butttonNext} width={20} height={20} />
