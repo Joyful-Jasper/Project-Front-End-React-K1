@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addRegister } from "./RegisterSlice";
 import gambar1 from "../../assets/buku.svg";
 import logo from "../../assets/logo.svg";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 // import { useEffect } from "react";
 
@@ -39,9 +39,14 @@ const RegisterView = () => {
           <p style={{ sizeText: "30px" }} className="my-3">
             Create a new account
           </p>
-
-          <p>Already a member?</p>
-          {/* <link>Login</link> */}
+          <div className="row">
+            <div className="col">
+              <p>Already a member?</p>
+            </div>
+            <div className="col">
+              <Link to="/login">Login</Link>
+            </div>
+          </div>
           <div className="row">
             <div className="col">
               <label htmlFor="exampleFormControlInput1" className="form-label">
@@ -65,7 +70,7 @@ const RegisterView = () => {
           </label>
           <input type="password" className="form-control" id="password" name="password" value={userData.password} onChange={handleChange} />
           <br></br>
-          <button onClick={handleSumbit} style={{ backgroundColor: "#FFA000" }}>
+          <button onClick={handleSumbit} style={{ backgroundColor: "#FFA000", border: "none", padding: "10px" }}>
             Create Account
           </button>
         </div>
