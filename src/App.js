@@ -4,7 +4,7 @@ import RegisterView from "./Componen/Register/RegisterView";
 import LoginView from "./Componen/Login/LoginView";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DetailBorow from "./Componen/DetailBorow/DetailBorow";
-// import DetailBorow from "./Componen/DetailBorow/DetailBorow.JS";
+import Dashboard from "./page/Dashboard.js";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
 
         <Route path="/register" element={<RegisterView />} />
         <Route path="/login" element={<LoginView />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         {/* <Route path="/detail" element={<DetailBook />} /> */}
       </Routes>
     </BrowserRouter>
