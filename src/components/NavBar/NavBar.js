@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux/es/exports';
 import { Dropdown } from 'bootstrap';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
+import {HiMenuAlt3} from 'react-icons/hi'
 
 const NavBar = () => {
   const user = useSelector((state) => state.user)
@@ -59,7 +60,9 @@ const NavBar = () => {
             <img src={Logo} alt=''/>
           </Link>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className=''/>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className=''>
+          <HiMenuAlt3 size={28} color={'black'}/>
+        </Navbar.Toggle>
         <Navbar.Collapse className='flex-grow-0 w-25' id="basic-navbar-nav">
           <Form className="d-flex w-100 py-2 px-1">
             <Form.Control
