@@ -5,6 +5,7 @@ import DetailBooks from "../DetailBooks-Modal/DetailBooks";
 
 const CardMenutab = (props) => {
   const [book, setBook] = useState({});
+  console.log(book)
 
   return (
     <>
@@ -16,7 +17,7 @@ const CardMenutab = (props) => {
             <div className="col-md-3 my-2" key={index}>
               <Card className="image-card" imgsrc={item?.volumeInfo?.imageLinks?.thumbnail} title={item?.volumeInfo?.title} />
               {/* Button trigger modal */}
-              <button onClick={() => setBook(item.volumeInfo)} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{ display: "flex", alignItems: "center", margin: "auto" }}>
+              <button onClick={() => setBook(item)} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{ display: "flex", alignItems: "center", margin: "auto" }}>
                 Details Book
               </button>
             </div>
@@ -24,7 +25,7 @@ const CardMenutab = (props) => {
         </div>
         <div className="middle">
           <div className="text">
-            <DetailBooks book={book} />
+            <DetailBooks book={book.volumeInfo} />
           </div>
         </div>
       </div>
