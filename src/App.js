@@ -18,8 +18,6 @@ function App() {
 
         <Route path="/register" element={<RegisterView />} />
         <Route path="/login" element={<LoginView />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        {/* <Route path="/detail" element={<DetailBook />} /> */}
       </Routes>
     </BrowserRouter>
   );

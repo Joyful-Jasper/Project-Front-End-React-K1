@@ -7,7 +7,7 @@ import { userData } from "../Register/RegisterView";
 import { Link, navigate, useNavigate } from "react-router-dom";
 import { Alert, Form } from "react-bootstrap";
 import jwt_decode from "jwt-decode";
-// import DetailBook from "../DetailBook/DetailBook.JS";
+import mata from "../../assets/icon mata.jpg";
 
 const LoginView = () => {
   const dispatch = useDispatch();
@@ -38,6 +38,20 @@ const LoginView = () => {
 
     const result = user.data.find((person) => person.email === loginData.email && person.password === loginData.password);
     if (!result) {
+      // <div class="modal" tabindex="-1">
+      //   <div class="modal-dialog">
+      //     <div class="modal-content">
+      //       <div class="modal-header">
+      //         <h5 class="modal-title">Modal title</h5>
+      //         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      //       </div>
+      //       <div class="modal-body">
+      //         <p>Anda Gagal Login </p>
+      //         <p> Diharapkan Untuk Register Terlebih Dahulu</p>
+      //       </div>
+      //     </div>
+      //   </div>
+      // </div>;
       alert("kamu belum register");
     } else {
       alert("selamat login berhasil");
@@ -73,6 +87,16 @@ const LoginView = () => {
     navigate("/register");
   };
 
+  const sandi = () => {
+    console.log("bandung");
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  };
+
   return (
     <div className="container">
       <div className="container-fluid" style={{ backgroundColor: "#F7F1EA" }}>
@@ -81,7 +105,7 @@ const LoginView = () => {
             <img src={logo} width={150} className="mt-3 mx-5" />
           </div>
           <div className="col justify-content-end d-flex mx-auto mt-3 px-5">
-            <button onClick={handleRegister} style={{ backgroundColor: "#FFA000", border: "none", padding: "10px" }}>
+            <button onClick={handleRegister} style={{ backgroundColor: "#FFA000", border: "none", padding: "10px", borderRadius: "5px", color: "white" }}>
               Sign-up
             </button>
           </div>
@@ -91,18 +115,27 @@ const LoginView = () => {
             <h1 className="justify-content-center d-flex mx-auto">Login</h1>
             <p className="justify-content-center d-flex mx-auto">Hey, enter your details to sign in to your account</p>
 
-            <label htmlFor="exampleFormControlInput1" className="form-label">
-              Email
-            </label>
-            <input type="email" className="form-control" id="emailView" name="email" placeholder="name@example.com" value={loginData.email} onChange={handleInput} />
+            <div className="col-11">
+              <label htmlFor="exampleFormControlInput1" className="form-label">
+                Email
+              </label>
+              <input type="email" className="form-control" id="emailView" name="email" placeholder="name@example.com" value={loginData.email} onChange={handleInput} />
+            </div>
             <label htmlFor="exampleFormControlInput1" className="form-label">
               Password
             </label>
-            <input type="password" className="form-control" id="password" name="password" value={loginData.password} onChange={handleInput} />
+            <div className="row">
+              <div className="col-11">
+                <input type="password" className="form-control" id="password" name="password" value={loginData.password} onChange={handleInput} />
+              </div>
+              <div className="col-1">
+                <img src={mata} width={20} onClick={sandi} />
+              </div>
+            </div>
             <br></br>
             <div className="col justify-content-end d-flex mx-auto">
-              <button onClick={handleLogIn} style={{ backgroundColor: "#FFA000", border: "none", padding: "10px" }}>
-                Sing In
+              <button onClick={handleLogIn} style={{ backgroundColor: "#FFA000", border: "none", padding: "10px", borderRadius: "5px", color: "white" }}>
+                Sign In
               </button>
             </div>
             <br></br>
@@ -110,7 +143,6 @@ const LoginView = () => {
 
             <div className="col-6 py-3">
               <div id="buttonDiv"></div>
-              {/* <DetailBook /> */}
             </div>
           </div>
           {/* <div className="col"></div> */}

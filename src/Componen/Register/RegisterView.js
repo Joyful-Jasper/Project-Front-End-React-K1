@@ -44,7 +44,9 @@ const RegisterView = () => {
               <p>Already a member?</p>
             </div>
             <div className="col">
-              <Link to="/login">Login</Link>
+              <Link to="/login" style={{ textDecoration: "none" }}>
+                Login
+              </Link>
             </div>
           </div>
           <div className="row">
@@ -70,7 +72,7 @@ const RegisterView = () => {
           </label>
           <input type="password" className="form-control" id="password" name="password" value={userData.password} onChange={handleChange} />
           <br></br>
-          <button onClick={handleSumbit} style={{ backgroundColor: "#FFA000", border: "none", padding: "10px" }}>
+          <button onClick={handleSumbit} style={{ backgroundColor: "#FFA000", border: "none", padding: "10px", borderRadius: "5px", color: "white" }}>
             Create Account
           </button>
         </div>
