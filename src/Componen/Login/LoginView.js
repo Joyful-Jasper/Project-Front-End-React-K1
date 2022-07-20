@@ -18,7 +18,7 @@ const LoginView = () => {
     password: "",
   });
 
-  // const [show, setShow] = useState(user.data.email === loginData.email && user.data.password === loginData.password(true));
+  const [show, setShow] = useState(false);
 
   const handleInput = (event) => {
     setLoginData({
@@ -38,23 +38,7 @@ const LoginView = () => {
 
     const result = user.data.find((person) => person.email === loginData.email && person.password === loginData.password);
     if (!result) {
-      // <div class="modal" tabindex="-1">
-      //   <div class="modal-dialog">
-      //     <div class="modal-content">
-      //       <div class="modal-header">
-      //         <h5 class="modal-title">Modal title</h5>
-      //         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      //       </div>
-      //       <div class="modal-body">
-      //         <p>Anda Gagal Login </p>
-      //         <p> Diharapkan Untuk Register Terlebih Dahulu</p>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </div>;
-      alert("kamu belum register");
-    } else {
-      alert("selamat login berhasil");
+      setShow(true);
     }
     // dispatch(addRegister(loginData));
     // event.preventDefault();
@@ -88,7 +72,6 @@ const LoginView = () => {
   };
 
   const sandi = () => {
-    console.log("bandung");
     var x = document.getElementById("password");
     if (x.type === "password") {
       x.type = "text";
@@ -114,7 +97,12 @@ const LoginView = () => {
           <div className="col-6 mt-5 my-5 py-3 px-5" style={{ backgroundColor: "white" }}>
             <h1 className="justify-content-center d-flex mx-auto">Login</h1>
             <p className="justify-content-center d-flex mx-auto">Hey, enter your details to sign in to your account</p>
-
+            {show && (
+              <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+                <Alert.Heading>sorry there was an error!</Alert.Heading>
+                <p>Please enter the correct email and password or register first</p>
+              </Alert>
+            )}
             <div className="col-11">
               <label htmlFor="exampleFormControlInput1" className="form-label">
                 Email
