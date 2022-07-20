@@ -41,15 +41,13 @@ const NavBar = () => {
             </Nav.Item>
             <Nav.Item className='py-2 px-1'>
               <Link to='/dashboard'>
-                <img className='avatar' src={user?.data[0]?.picture} />
+                <img className='avatar' src={user?.data[0]?.userData[0]?.avatar} />
               </Link>
             </Nav.Item>
           </Nav>
       )
     }
   }
-
-
 
   
   return (

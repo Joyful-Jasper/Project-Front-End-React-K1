@@ -15,12 +15,8 @@ const CardMenutab = (props) => {
         <div className="row">
           {props?.data?.map((item, index) => (
             <div className="col-md-3 my-2" key={index}>
-              <Card className="image-card" imgsrc={item?.volumeInfo?.imageLinks?.thumbnail} title={item?.volumeInfo?.title} />
+              <Card test={setBook} buku={item} className="image-card" imgsrc={item?.volumeInfo?.imageLinks?.thumbnail} title={item?.volumeInfo?.title} />
               {/* Button trigger modal */}
-
-              <button onClick={() => setBook(item)} type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style={{ display: "flex", alignItems: "center", margin: "auto", marginTop: "5px" }}>
-                Details Book
-              </button>
 
               <button
                 onClick={() => setBook(item)}
@@ -30,7 +26,7 @@ const CardMenutab = (props) => {
                 data-bs-target="#modalBorrow"
                 style={{ display: "flex", alignItems: "center", margin: "auto", marginBottom: "5px", marginTop: "5px" }}
               >
-                Details Borrow
+                Borrow
               </button>
             </div>
           ))}

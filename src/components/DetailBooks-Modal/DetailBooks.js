@@ -2,7 +2,7 @@ import React from "react";
 import "./DetailBooks.css";
 
 const DetailBooks = ( {book} ) => {
-  console.log(book);
+  // console.log(book);
   return (
     <div>
       {/* Modal  */}

@@ -4,10 +4,10 @@ import "./Card.css";
 
 const Card = (props) => {
   const [book, setBook] = useState({});
-  console.log(book);
+  // console.log(book);
 
   return (
-    <div className="card-view text-center">
+    <div onClick={() => props.test(props.buku)} type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" className="card-view text-center">
       <div className="overflow">
         <img src={props.imgsrc} style={{ width: 100 }} className="card-img" />
       </div>
