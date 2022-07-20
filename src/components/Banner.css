@@ -9,25 +9,18 @@
 
 .banner h1 {
   color: #fff;
-  position: absolute;
-  top: 30%;
-  left: 10%;
+  position: relative;
   font-weight: bold;
 }
 
 .banner p {
   color: #fff;
-  position: absolute;
+  position: relative;
   font-size: 24px;
-  top: 40%;
-  left: 10%;
-  right: 30%;
 }
 
 .btn-in-banner {
-  position: absolute;
-  top: 55%;
-  left: 15%;
+  position: relative;
 }
 
 .btn-in-banner-borrowed {
@@ -49,39 +42,65 @@
   margin-left: 10px;
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (min-width: 1031px) and (max-width: 1440px) {
   .banner h1 {
-    top: 18%;
+    top: 20%;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .banner p {
-    font-size: 16px;
     top: 23%;
-    right: 10%;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .btn-in-banner {
-    top: 29%;
-    left: 18%;
+    top: 25%;
+    margin-left: 50px;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 769px) and (max-width: 1030px) {
+  .banner h1 {
+    top: 25%;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .banner p {
+    font-size: 20px;
+    top: 27%;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .btn-in-banner {
+    top: 25%;
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .banner h1 {
     top: 20%;
-    right: 10%;
     text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .banner p {
     font-size: 16px;
-    top: 30%;
-    right: 10%;
+    top: 25%;
     text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .btn-in-banner {
-    top: 40%;
-    left: 18%;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
   }
 }
