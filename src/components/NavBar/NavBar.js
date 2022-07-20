@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Logo from './Logo.svg'
@@ -14,9 +14,20 @@ import { useSelector } from 'react-redux/es/exports';
 import { Dropdown } from 'bootstrap';
 import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 import {HiMenuAlt3} from 'react-icons/hi'
+import { useDispatch } from 'react-redux';
+import { searchBooks } from '../Books/BooksSlice';
 
 const NavBar = () => {
-  const user = useSelector((state) => state.user)
+  const user = useSelector((state) => state.user);
+  const books = useSelector((state) => state.book);
+  const [keyword, setKeyword] = useState('')
+  const dispatch = useDispatch()
+  console.log(keyword)
+
+  const handleClick = (event) => {
+    event.preventDefault()
+    dispatch(searchBooks(keyword))
+  }
 
   const navUpdate = () => {
     if(user.logged === false) {
@@ -63,12 +74,17 @@ const NavBar = () => {
         </Navbar.Toggle>
         <Navbar.Collapse className='flex-grow-0 w-25' id="basic-navbar-nav">
           <Form className="d-flex w-100 py-2 px-1">
+            <InputGroup>
             <Form.Control
               type="search"
               placeholder="Search"
               className="shadow-sm border rounded-3"
               aria-label="Search"
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
             />
+            <Button variant="outline-primary" onClick={handleClick} type='submit'>Button</Button>
+            </InputGroup>
           </Form>
         </Navbar.Collapse>
         <Navbar.Collapse className='flex-grow-0' id="basic-navbar-nav">

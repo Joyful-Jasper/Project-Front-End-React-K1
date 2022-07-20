@@ -10,7 +10,13 @@ const initialState = {
 
 export const fetchBooks = createAsyncThunk('book/fetchBooks', async () => {
   return await axios
-    .get('https://www.googleapis.com/books/v1/volumes?q=romance')
+    .get('https://www.googleapis.com/books/v1/volumes?q=romance&maxResults=40')
+    .then((response) => response.data)
+})
+
+export const searchBooks = createAsyncThunk('book/searchBooks', async (data) => {
+  return await axios
+    .get(`https://www.googleapis.com/books/v1/volumes?q=${data}&maxResults=40`)
     .then((response) => response.data)
 })
 
@@ -27,6 +33,17 @@ const booksSlice = createSlice({
       state.error = action.error
     })
     item.addCase(fetchBooks.rejected, (state, action) => {
+      state.books = [];
+      state.error = action.error;
+    })
+    item.addCase(searchBooks.pending, (state) => {
+      state.loading = true;
+    })
+    item.addCase(searchBooks.fulfilled, (state, action) => {
+      state.loading = false;
+      state.books = action.payload
+    })
+    item.addCase(searchBooks.rejected, (state, action) => {
       state.books = [];
       state.error = action.error;
     })
