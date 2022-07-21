@@ -17,7 +17,7 @@ const DetailBooks = ({ book }) => {
 						</div>
 						<div className="modal-body">
 							<button className="shelf-book">Page Count : {book?.pageCount}</button>
-							<img src={book?.imageLinks.thumbnail} className="cover-book" />
+							<img src={book?.imageLinks?.thumbnail} className="cover-book" />
 							<h3 className="title-book">{book?.title}</h3>
 							<p className="release-book">{book?.publishedDate}</p>
 							<h6 className="preview-book">{book?.description}</h6>

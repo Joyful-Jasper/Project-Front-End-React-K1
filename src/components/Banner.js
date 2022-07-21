@@ -11,7 +11,6 @@ const Banner = () => {
 				<Link to="/history">
 					<button className="btn-in-banner-borrowed">Borrowed book</button>
 				</Link>
-				<button className="btn-in-banner-waiting">Waiting list</button>
 			</div>
 		</div>
 	);

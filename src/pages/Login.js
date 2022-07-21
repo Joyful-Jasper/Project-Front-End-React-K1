@@ -135,7 +135,7 @@ const Login = (props) => {
 							</button>
 						</form>
 
-						<p className="mt-3 text-center">-Or Sign In With-</p>
+						<p className="text-center">-Or Sign In With-</p>
 						<div className="raw">
 							<div className="col">
 								<div id="buttonDiv"></div>
