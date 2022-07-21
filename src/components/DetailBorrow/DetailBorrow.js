@@ -13,13 +13,14 @@ const DetailBorrow = ({ book }) => {
     const month = dates.getMonth();
 
     const borrowBooks = {
-      loadId: book.id + Math.floor(Math.random() * 999999999),
+      // loanId: book.id + Math.floor(Math.random() * 999999999),
       bookTitle: book.volumeInfo.title,
       renderDate: `${date}/${month}/${year}`,
       returnDate: `${date}/${month + 2}/${year}`,
+      userId: user?.data[0]?.id,
     };
 
-    dispatch(addBooks(borrowBooks, user?.data[0]?.id));
+    dispatch(addBooks(borrowBooks));
     console.log(user?.data[0]?.id);
   };
 
