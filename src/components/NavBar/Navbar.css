@@ -1,0 +1,42 @@
+.navbar-first {
+	background-color: #f7f1ea;
+}
+
+.btn-first {
+	background-color: #ffa000 !important;
+	border-color: #ffa000 !important;
+	border-width: 2px;
+	color: white !important;
+}
+
+.btn-first:hover {
+	background-color: white !important;
+	color: #ffa000 !important;
+}
+
+.btn-second {
+	background-color: white !important;
+	color: black;
+	border-width: 2px;
+}
+
+.btn-second:hover {
+	border-color: #ffa000;
+	color: #ffa000 !important;
+}
+
+.input-size {
+	width: 25%;
+}
+
+.avatar {
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50px;
+	border-radius: 25px;
+}
+
+.dropdown-toggle::after {
+	content: none !important;
+}

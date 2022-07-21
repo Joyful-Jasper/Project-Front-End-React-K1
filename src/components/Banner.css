@@ -1,0 +1,106 @@
+.banner {
+  background-image: url("../assets/banner.svg");
+  height: 320px;
+  width: 90%;
+  justify-content: center;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.banner h1 {
+  color: #fff;
+  position: relative;
+  font-weight: bold;
+}
+
+.banner p {
+  color: #fff;
+  position: relative;
+  font-size: 24px;
+}
+
+.btn-in-banner {
+  position: relative;
+}
+
+.btn-in-banner-borrowed {
+  background-color: #fff;
+  border-color: #fff;
+  color: #ffa000;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.btn-in-banner-waiting {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 1031px) and (max-width: 2000px) {
+  .banner h1 {
+    top: 20%;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .banner p {
+    top: 23%;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .btn-in-banner {
+    top: 25%;
+    margin-left: 50px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1030px) {
+  .banner h1 {
+    top: 25%;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .banner p {
+    font-size: 20px;
+    top: 27%;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .btn-in-banner {
+    top: 25%;
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner h1 {
+    top: 20%;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .banner p {
+    font-size: 16px;
+    top: 25%;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .btn-in-banner {
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+}

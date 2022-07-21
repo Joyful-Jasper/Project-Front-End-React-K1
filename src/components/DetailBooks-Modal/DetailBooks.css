@@ -1,0 +1,40 @@
+.cover-book {
+  width: 50%;
+  justify-content: center;
+  display: flex;
+  margin: auto;
+}
+
+.title-book {
+  font-weight: bold;
+  color: #ffa000;
+  text-align: center;
+}
+
+.release-book {
+  color: #ffa000;
+  text-align: center;
+}
+
+.preview-book {
+  text-align: justify;
+}
+
+#exampleModal {
+  position: absolute !important;
+}
+
+.btn-primary {
+  background-color: #ffa000 !important;
+  border-color: #ffa000 !important;
+  color: white !important;
+}
+
+.shelf-book {
+  background-color: #ffa000;
+  color: white;
+  border-radius: 20px;
+  border-color: #ffa000;
+  font-weight: bold;
+  font-size: 16px;
+}

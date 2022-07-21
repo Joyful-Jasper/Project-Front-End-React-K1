@@ -1,0 +1,43 @@
+body {
+  background-color: #f7f1ea !important;
+}
+
+.card-view {
+  background-color: #ffe6bc;
+  border-radius: 20px;
+  height: 300px;
+}
+
+.card-view:hover {
+  box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253);
+}
+
+.card-img {
+  margin-top: 25px;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+.card-img:hover {
+  transform: scale(1.8);
+}
+.overflow {
+  overflow: hidden;
+}
+
+.card-title {
+  color: #ffa000;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+  .card-view {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-view {
+    height: 270px;
+  }
+}

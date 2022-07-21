@@ -1,0 +1,11 @@
+.carousel-caption {
+  position: absolute;
+  top: 30%;
+  left: 15%;
+}
+
+@media screen and (max-width: 500px) {
+  .carousel-caption {
+    top: 20%;
+  }
+}
