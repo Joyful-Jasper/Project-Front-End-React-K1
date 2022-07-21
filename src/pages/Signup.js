@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import logo from "../../assets/logo.svg";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { addUser, addUsersApi, fetchUsers } from "../components/User/UserSlice";
+import buku from "../assets/gambar-book2.svg";
 
 // import { useEffect } from "react";
 
@@ -26,20 +27,20 @@ const Signup = () => {
 
   const handleSumbit = (e) => {
     // dispatch(fetchUsers())
-    e.preventDefault()
+    e.preventDefault();
     let data = {
       userBooks: [],
       userData: [
         {
           name: userData.firstName + " " + userData.lastName,
-          avatar: 'https://bombyxplm.com/wp-content/uploads/2021/01/website-faculty-man-300x300.jpg',
+          avatar: "https://bombyxplm.com/wp-content/uploads/2021/01/website-faculty-man-300x300.jpg",
           email: userData.email,
-          password: userData.password
-        }
+          password: userData.password,
+        },
       ],
-    }
-    dispatch(addUsersApi(data))
-    dispatch(fetchUsers())
+    };
+    dispatch(addUsersApi(data));
+    dispatch(fetchUsers());
   };
   console.log(user);
 
@@ -47,19 +48,12 @@ const Signup = () => {
     <div className="container">
       {/* <div className="container-fluid justify-content-center d-flex mx-auto"> */}
       <div className="row" style={{ backgroundColor: "#F7F1EA" }}>
-        <div className="col-6 mt-3">
-          <img src='placeholder' width={150} />
-          <br></br>
+        <div className="col-6 my-5 ">
           <p style={{ sizeText: "30px" }} className="my-3">
             Create a new account
           </p>
           <div className="row">
-            <div className="col">
-              <p>Already a member?</p>
-            </div>
-            <div className="col">
-              <Link to="/login">Login</Link>
-            </div>
+            <p>Already a member?</p>
           </div>
           <div className="row">
             <div className="col">
@@ -84,12 +78,12 @@ const Signup = () => {
           </label>
           <input type="password" className="form-control" id="password" name="password" value={userData.password} onChange={handleChange} />
           <br></br>
-          <button onClick={handleSumbit} style={{ backgroundColor: "#FFA000", border: "none", padding: "10px" }}>
+          <button onClick={handleSumbit} style={{ backgroundColor: "#FFA000", border: "none", padding: "10px", color: "white" }}>
             Create Account
           </button>
         </div>
         <div className="col-6 justify-content-end d-flex mx-auto">
-          <img src='placeholder' height={550} />
+          <img src={buku} height={550} />
         </div>
       </div>
     </div>
