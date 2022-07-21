@@ -28,6 +28,19 @@ const Table = () => {
     );
   };
 
+  const returnDate = () => {
+    const dates = new Date();
+    const date = dates.getDate();
+    const year = dates.getFullYear();
+    const month = dates.getMonth() + 2;
+
+    return (
+      <div>
+        {date}/{month}/{year}
+      </div>
+    );
+  };
+
   return (
     <div>
       <table className="table table-striped table-bordered" style={{borderColor:'#FFA000',textAlign:'center'}} >
@@ -47,7 +60,7 @@ const Table = () => {
               <td>{book.id + Math.floor((Math.random()*999999999))}</td>
               <td>{"sementara"}</td>
               <td>{renderDate()}</td>
-              <td>{"sementara"}</td>
+              <td>{returnDate()}</td>
             </tr>
           ))}
         </tbody>
