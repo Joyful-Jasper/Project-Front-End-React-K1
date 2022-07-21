@@ -1,51 +1,30 @@
 import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const Table = () => {
   const [books, setBooks] = useState([]);
+  const user = useSelector((state) => state.user);
 
   useEffect(() => {
     fetchData();
+    const filterData = () => {
+      books.filter((book) => (book.id = user.data[0].id)).map((filteredBook) => setBooks(filteredBook));
+    };
   }, []);
 
   const fetchData = async () => {
-    const response = await fetch(`https://62ccd8fea080052930b09ff3.mockapi.io/users`);
+    const response = await fetch(`https://62ccd8fea080052930b09ff3.mockapi.io/borrow`);
     const data = await response.json();
     setBooks(data);
 
     console.log(data);
   };
-
-  const renderDate = () => {
-    const dates = new Date();
-    const date = dates.getDate();
-    const year = dates.getFullYear();
-    const month = dates.getMonth();
-
-    return (
-      <div>
-        {date}/{month}/{year}
-      </div>
-    );
-  };
-
-  const returnDate = () => {
-    const dates = new Date();
-    const date = dates.getDate();
-    const year = dates.getFullYear();
-    const month = dates.getMonth() + 2;
-
-    return (
-      <div>
-        {date}/{month}/{year}
-      </div>
-    );
-  };
-
+  console.log(books);
   return (
     <div>
-      <table className="table table-striped table-bordered" style={{borderColor:'#FFA000',textAlign:'center'}} >
-        <thead style={{backgroundColor:'#FFA000', color:'white', }}>
-          <tr >
+      <table className="table table-striped table-bordered" style={{ borderColor: "#FFA000", textAlign: "center" }}>
+        <thead style={{ backgroundColor: "#FFA000", color: "white" }}>
+          <tr>
             <th>N0</th>
             <th>LOAN ID</th>
             <th>BOOK TITLE</th>
@@ -53,14 +32,14 @@ const Table = () => {
             <th>DATE OF RETURN</th>
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           {books.map((book, index) => (
             <tr key={book.id}>
               <td>{index + 1}</td>
-              <td>{book.id + Math.floor((Math.random()*999999999))}</td>
+              <td></td>
               <td>{"sementara"}</td>
-              <td>{renderDate()}</td>
-              <td>{returnDate()}</td>
+              <td></td>
+              <td></td>
             </tr>
           ))}
         </tbody>
