@@ -39,7 +39,6 @@ const Login = (props) => {
 		let temp = user.data.find((users) => users.userData[0].email === data.userData[0].email);
 		console.log(temp?.userData[0]?.password, data.userData[0].email);
 		if (temp?.userData[0]?.email === data.userData[0].email && temp?.userData[0]?.password === data.userData[0].password) {
-			alert("login berhasil");
 			dispatch(addUser(temp));
 			setLoginCheck(true);
 			setTimeout(() => navigate("/dashboard"), 2000);
@@ -52,7 +51,9 @@ const Login = (props) => {
 	const checkUser = () => {
 		let temp = user?.data?.find((users) => users?.userData[0]?.email == loginData.userData[0].email);
 		console.log(temp, user);
-		return temp !== undefined ? (dispatch(addUser(temp)), navigate("/dashboard")) : (dispatch(addUsersApi(loginData)), dispatch(addUser(loginData), navigate("/dashboard")));
+		return temp !== undefined
+			? (dispatch(addUser(temp)), setTimeout(() => navigate("/dashboard"), 3000), setLoginCheck(true))
+			: (dispatch(addUsersApi(loginData)), dispatch(addUser(loginData)), setTimeout(() => navigate("/dashboard"), 3000), setLoginCheck(true));
 	};
 
 	// a handle call back function from google library
@@ -102,6 +103,11 @@ const Login = (props) => {
 							<Alert variant="danger" onClose={() => setShow(false)} dismissible>
 								<Alert.Heading>sorry there was an error!</Alert.Heading>
 								<p>Please enter the correct email and password or register first</p>
+							</Alert>
+						)}
+						{loginCheck && (
+							<Alert variant="success" onClose={() => setLoginCheck(false)} dismissible>
+								<Alert.Heading>Login Success!</Alert.Heading>
 							</Alert>
 						)}
 						<form onSubmit={handleLogIn}>
