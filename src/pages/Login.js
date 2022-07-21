@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { addUser, fetchUsers, addUsersApi } from "../components/User/UserSlice";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Alert, Form } from "react-bootstrap";
-import gambarmata from "../assets/mata.svg";
-import buku from "../assets/tumpukan buku.png";
+import { HiOutlineMailOpen } from "react-icons/hi";
+import { IoIosEye } from "react-icons/io";
 
 const Login = (props) => {
   const [loginData, setLoginData] = useState({});
@@ -77,7 +77,7 @@ const Login = (props) => {
     <div className="container">
       <div className="container-fluid mx-auto">
         <div className="row justify-content-center d-flex mx-auto">
-          <div className="shadow p-3 col-6 mt-5 my-5 py-5 px-5" style={{ backgroundColor: "white", borderRadius: "10px" }}>
+          <div className="shadow col-8 mt-1 py-3 px-3" style={{ backgroundColor: "white", borderRadius: "10px" }}>
             <h1 className="justify-content-center d-flex mx-auto">Login</h1>
             <p className="justify-content-center d-flex mx-auto">Hey, enter your details to sign in to your account</p>
             {show && (
@@ -86,21 +86,22 @@ const Login = (props) => {
                 <p>Please enter the correct email and password or register first</p>
               </Alert>
             )}
-            <div className="col-11">
+            <div className="row mt-1">
               <label for="exampleFormControlInput1" className="form-label">
                 Email
               </label>
-              <input type="email" className="form-control" id="emailView" name="email" placeholder="name@example.com" onChange={handleInput} />
+              <div className="col-12">
+                <input type="email" className="form-control" id="emailView" name="email" placeholder="name@example.com" onChange={handleInput} />
+                <HiOutlineMailOpen style={{ position: "relative", top: "-55%", left: "90%" }} />
+              </div>
             </div>
-            <div className="row mt-3">
+            <div className="row mt-1">
               <label for="exampleFormControlInput1" className="form-label">
                 Password
               </label>
-              <div className="col-11">
+              <div className="col-12">
                 <input type="password" className="form-control" id="password" name="password" value={loginData.password} onChange={handleInput} />
-              </div>
-              <div className="col-1 justify-content-center d-flex my-auto ">
-                <img src={gambarmata} width={25} onClick={sandi} style={{ position: "absolute" }} />
+                <IoIosEye onClick={sandi} style={{ position: "relative", top: "-50%", left: "90%" }} />
               </div>
             </div>
             <br></br>
@@ -108,16 +109,16 @@ const Login = (props) => {
               Sign In
             </button>
 
-            <p className="mt-3">-Or Sign In With-</p>
+            <p className="mt-1">-Or Sign In With-</p>
             <div classNameName="raw">
               <div classNameName="col">
                 <div id="buttonDiv"></div>
               </div>
             </div>
           </div>
-          <div className="col-6 justify-content-end d-flex mx-auto my-auto">
-            <img src={buku} width={500} height={500} />
-          </div>
+          {/* <div className="col-6 justify-content-end d-flex mx-auto my-auto">
+            <img src={buku} width={500} height={500} /> */}
+          {/* </div> */}
         </div>
       </div>
     </div>

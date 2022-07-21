@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-// import { container, button } from "react-bootstrap";
+
 import { useDispatch, useSelector } from "react-redux";
-// import { addRegister } from "./RegisterSlice";
-// import gambar1 from "../../assets/buku.svg";
-// import logo from "../../assets/logo.svg";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { addUser, addUsersApi, fetchUsers } from "../components/User/UserSlice";
-import buku from "../assets/gambar-book2.svg";
-
-// import { useEffect } from "react";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -44,46 +38,59 @@ const Signup = () => {
   };
   console.log(user);
 
+  const sandi = () => {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  };
+
   return (
     <div className="container">
-      {/* <div className="container-fluid justify-content-center d-flex mx-auto"> */}
-      <div className="row" style={{ backgroundColor: "#F7F1EA" }}>
-        <div className="col-6 my-5 ">
-          <p style={{ sizeText: "30px" }} className="my-3">
-            Create a new account
-          </p>
-          <div className="row">
-            <p>Already a member?</p>
-          </div>
-          <div className="row">
-            <div className="col">
-              <label htmlFor="exampleFormControlInput1" className="form-label">
-                first name
+      <div className="container mx-auto " style={{ backgroundColor: "#F7F1EA" }}>
+        <div className="row">
+          <div className="row justify-content-center d-flex mx-auto">
+            <div className="shadow col-8 mt-1 px-3 py-3" style={{ backgroundColor: "white", borderRadius: "10px" }}>
+              <p style={{ sizeText: "30px" }} className="my-3">
+                Create a new account
+              </p>
+              <div className="row">
+                <p>Already a member?</p>
+              </div>
+              <div className="row">
+                <div className="col">
+                  <label htmlFor="exampleFormControlInput1" className="form-label">
+                    first name
+                  </label>
+                  <input type="text" className="form-control" id="first" name="firstName" value={userData.firstName} onChange={handleChange} />
+                </div>
+                <div className="col">
+                  <label htmlFor="exampleFormControlInput1" className="form-label">
+                    last name
+                  </label>
+                  <input type="text" className="form-control" id="last" name="lastName" value={userData.lastName} onChange={handleChange} />
+                </div>
+              </div>
+              <label htmlFor="exampleFormControlInput1" className="form-label pt-3">
+                Email
               </label>
-              <input type="text" className="form-control" id="first" name="firstName" value={userData.firstName} onChange={handleChange} />
-            </div>
-            <div className="col">
-              <label htmlFor="exampleFormControlInput1" className="form-label">
-                last name
+              <div className="col-12">
+                <input type="email" className="form-control" id="emailView" name="email" placeholder="name@example.com" value={userData.email} onChange={handleChange} />
+              </div>
+              <label htmlFor="exampleFormControlInput1" className="form-label pt-3">
+                Password
               </label>
-              <input type="text" className="form-control" id="last" name="lastName" value={userData.lastName} onChange={handleChange} />
+              <div className="col-12">
+                <input type="password" className="form-control" id="password" name="password" value={userData.password} onChange={handleChange} />
+              </div>
+              <br></br>
+              <button onClick={handleSumbit} style={{ backgroundColor: "#FFA000", border: "none", padding: "10px", color: "white", borderRadius: "5px" }}>
+                Create Account
+              </button>
             </div>
           </div>
-          <label htmlFor="exampleFormControlInput1" className="form-label pt-3">
-            Email
-          </label>
-          <input type="email" className="form-control" id="emailView" name="email" placeholder="name@example.com" value={userData.email} onChange={handleChange} />
-          <label htmlFor="exampleFormControlInput1" className="form-label pt-3">
-            Password
-          </label>
-          <input type="password" className="form-control" id="password" name="password" value={userData.password} onChange={handleChange} />
-          <br></br>
-          <button onClick={handleSumbit} style={{ backgroundColor: "#FFA000", border: "none", padding: "10px", color: "white" }}>
-            Create Account
-          </button>
-        </div>
-        <div className="col-6 justify-content-end d-flex mx-auto">
-          <img src={buku} height={550} />
         </div>
       </div>
     </div>
