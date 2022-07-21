@@ -1,5 +1,4 @@
 import React from "react";
-import DropdownItem from "react-bootstrap/esm/DropdownItem";
 
 const DetailBorrow = ({ book }) => {
   return (
