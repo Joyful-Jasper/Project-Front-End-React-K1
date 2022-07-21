@@ -1,17 +1,17 @@
 import React from "react";
-import DropdownItem from "react-bootstrap/esm/DropdownItem";
+// import DropdownItem from "react-bootstrap/esm/DropdownItem";
 
-const DetailBorrow = ({ book }) => {
+const InformationBorrow = ({ book }) => {
   return (
     <div>
       {/* Button trigger modal */}
 
       {/* Modal  */}
-      <div className="modal fade" id="modalBorrow" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade" id="informationBorrow" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="modalBorrowLabel">
+              <h5 className="modal-title" id="informationBorrowLabel">
                 Details Borrow
               </h5>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -27,10 +27,9 @@ const DetailBorrow = ({ book }) => {
                   <p> Authors : {book?.volumeInfo?.authors}</p>
                   <p> Year : {book?.volumeInfo?.publishedDate} </p>
                   <p> ID : {book?.id}</p>
-                  <button onClick={() => book.setBook(book.item)} data-bs-toggle="modal"
-                data-bs-target="#informationBorrow" className="justify-content-end d-flex mx-auto" style={{ backgroundColor: "#FFA000", borderRadius: "10px", padding: "10px", color: "white", borderColor: "#FFA000" }}>
-                    BORROW
-                  </button>
+                  <p className="alert alert-success" role="alert">
+                    Please take the book at the reception by showing the loan id!
+                  </p>
                 </div>
               </div>
             </div>
@@ -41,4 +40,4 @@ const DetailBorrow = ({ book }) => {
   );
 };
 
-export default DetailBorrow;
+export default InformationBorrow;

@@ -3,6 +3,7 @@ import "./CardMenutab.css";
 import Card from "./Card";
 import DetailBooks from "../DetailBooks-Modal/DetailBooks";
 import DetailBorrow from "../DetailBorrow/DetailBorrow";
+import InformationBorrow from "../InformationBorrow/InformationBorrow";
 const CardMenutab = (props) => {
   const [book, setBook] = useState({});
   console.log(book);
@@ -35,6 +36,7 @@ const CardMenutab = (props) => {
           <div className="text">
             <DetailBooks book={book.volumeInfo} />
             <DetailBorrow book={book} />
+            <InformationBorrow book={book} />
           </div>
         </div>
       </div>

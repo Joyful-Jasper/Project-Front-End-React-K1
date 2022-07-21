@@ -18,7 +18,7 @@ function App() {
         <Route path="*" element={<Error />} />
         <Route element={<ProtectedRoutes />}>
           {" "}
-          // the child element can be access if the user login
+          {/* // the child element can be access if the user login */}
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
