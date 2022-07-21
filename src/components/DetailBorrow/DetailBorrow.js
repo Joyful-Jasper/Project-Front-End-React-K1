@@ -1,6 +1,28 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addBooks } from "../User/UserSlice";
 
 const DetailBorrow = ({ book }) => {
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  console.log(user);
+  const handleClick = () => {
+    const dates = new Date();
+    const date = dates.getDate();
+    const year = dates.getFullYear();
+    const month = dates.getMonth();
+
+    const borrowBooks = {
+      loadId: book.id + Math.floor(Math.random() * 999999999),
+      bookTitle: book.volumeInfo.title,
+      renderDate: `${date}/${month}/${year}`,
+      returnDate: `${date}/${month + 2}/${year}`,
+    };
+
+    dispatch(addBooks(borrowBooks, user?.data[0]?.id));
+    console.log(user?.data[0]?.id);
+  };
+
   return (
     <div>
       {/* Button trigger modal */}
@@ -26,8 +48,13 @@ const DetailBorrow = ({ book }) => {
                   <p> Authors : {book?.volumeInfo?.authors}</p>
                   <p> Year : {book?.volumeInfo?.publishedDate} </p>
                   <p> ID : {book?.id}</p>
-                  <button onClick={() => book.setBook(book.item)} data-bs-toggle="modal"
-                data-bs-target="#informationBorrow" className="justify-content-end d-flex mx-auto" style={{ backgroundColor: "#FFA000", borderRadius: "10px", padding: "10px", color: "white", borderColor: "#FFA000" }}>
+                  <button
+                    onClick={() => handleClick()}
+                    data-bs-toggle="modal"
+                    data-bs-target="#informationBorrow"
+                    className="justify-content-end d-flex mx-auto"
+                    style={{ backgroundColor: "#FFA000", borderRadius: "10px", padding: "10px", color: "white", borderColor: "#FFA000" }}
+                  >
                     BORROW
                   </button>
                 </div>

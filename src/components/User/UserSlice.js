@@ -22,6 +22,11 @@ export const addUsersApi = createAsyncThunk('application/json', async (data) => 
     .then((res) => console.log(res))
 })
 
+export const addBooks = createAsyncThunk('user/addBooks', async (data, id) => {
+  return await api
+    .put(`/users/${id}/`, data)
+    .then((res) => console.log(res))
+})
 
 const userSlice = createSlice({
   name: 'user',
