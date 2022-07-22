@@ -15,13 +15,12 @@ const DetailBorrow = ({ book }) => {
 		const borrowBooks = {
 			// loanId: book.id + Math.floor(Math.random() * 999999999),
 			bookTitle: book.volumeInfo.title,
-			renderDate: `${date}/${month}/${year}`,
-			returnDate: `${date}/${month + 2}/${year}`,
+			renderDate: `${date}/${month + 1}/${year}`,
+			returnDate: `${date}/${month + 3}/${year}`,
 			userId: user?.data[0]?.id,
 		};
 
 		dispatch(addBooks(borrowBooks));
-		console.log(user?.data[0]?.id);
 	};
 
 	return (
