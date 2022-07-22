@@ -33,14 +33,14 @@ const Dashboard = () => {
 			{/* carousel */}
 			<Banner />
 
-			{/* Card */}
-			{cardList()}
-
 			{/* card genre */}
-			<div className="container">
-				<h4 className="title">Genre</h4>
+			<div className="container mb-4">
+				<h4 className="title mb-2">Categories</h4>
 				<CardGenre />
 			</div>
+
+			{/* Card */}
+			{cardList()}
 		</>
 	);
 };

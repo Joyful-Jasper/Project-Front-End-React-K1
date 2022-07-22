@@ -72,10 +72,14 @@ const NavBar = () => {
 					</Nav.Item>
 					<NavDropdown id="nav-dropdown-dark-example" title={<img className="avatar" src={user?.data[0]?.userData[0]?.avatar} />}>
 						<NavDropdown.Item>
-							<Link to="/dashboard">Dashboard</Link>
+							<Link to="/dashboard" className="text-decoration-none text-dark">
+								Dashboard
+							</Link>
 						</NavDropdown.Item>
 						<NavDropdown.Item>
-							<Link to="/history">Borrow History</Link>
+							<Link to="/history" className="text-decoration-none text-dark">
+								Borrow History
+							</Link>
 						</NavDropdown.Item>
 						<NavDropdown.Divider />
 						<NavDropdown.Item href="#action/3.3">Profile</NavDropdown.Item>
